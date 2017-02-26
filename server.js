@@ -6,10 +6,10 @@ var app = express();
 app.use(morgan('combined'));
 
 var articleOne = {
-    title: 'Article One | Sachin Thakur'
+    title: 'Article One | Sachin Thakur',
     heading: 'Article One',
     date :'2/26/2017',
-    content:`
+    content: `
         <p>
             This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .
         </p>
@@ -25,8 +25,8 @@ var articleOne = {
     
 };
 function createTemplate(data){
-var title =data.title;
-var date =data.date
+var title = data.title;
+var date = data.date
 var heading = data.heading
 var content = data.content
 
