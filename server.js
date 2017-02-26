@@ -26,29 +26,29 @@ var articleOne = {
 };
 function createTemplate(data){
 var title = data.title;
-var date = data.date
-var heading = data.heading
-var content = data.content
+var date = data.date;
+var heading = data.heading;
+var content = data.content;
 
 var htmlTemplate = `
 <html>
- <head>
-     <title>
-         ${title}
-    </title>
-<meta name="viewport" content="width=devce-width,initial-scale=1" />
-   <link href="/ui/style.css" rel="stylesheet" />
+  <head>
+          <title>
+                    ${title}
+          </title>
+    <meta name="viewport" content="width=devce-width,initial-scale=1" />
+      <link href="/ui/style.css" rel="stylesheet" />
 
 
 
     </head>
 
-<body>
-    <div class="container">
+    <body>
+         <div class="container">
         
 
-    <div>
-        <a herf="https://cloud.imad.hasura.io/home">Home</a>
+          <div>
+                      <a herf="https://cloud.imad.hasura.io/home">Home</a>
             
      
     </div>
@@ -108,7 +108,7 @@ app.get('/', function (req, res) {
 
 
 app.get('/article-one',function(req, res){
-    res.sendFile(createTemplate(articleOne));
+    res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two',function(req, res){
