@@ -5,6 +5,102 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title: 'Article One | Sachin Thakur'
+    heading: 'Article One',
+    date :'2/26/2017',
+    content:`
+        <p>
+            This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .
+        </p>
+        
+        <P>
+            This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .
+        </P>
+        
+        <p>
+            This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .This is my first content ogf article .
+            
+        </p>`
+    
+};
+function create Template(data){
+var title =data.title;
+var date =data.date
+var heading = data.heading
+var content = data.content
+
+var htmlTemplate = `
+<html>
+ <head>
+     <title>
+         ${title}
+    </title>
+<meta name="viewport" content="width=devce-width,initial-scale=1" />
+   <link href="/ui/style.css" rel="stylesheet" />
+
+
+
+    </head>
+
+<body>
+    <div class="container">
+        
+
+    <div>
+        <a herf="https://cloud.imad.hasura.io/home">Home</a>
+            
+     
+    </div>
+    <hr/>
+    <h3>
+        
+       ${heading}
+    </h3> 
+    <div>
+    ${date}
+    </div>
+    <div>
+        ${content}
+       
+        
+        
+    </div>
+    
+        </div>
+</body>
+</html>
+`;
+return htmlTemplate;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -12,7 +108,7 @@ app.get('/', function (req, res) {
 
 
 app.get('/article-one',function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.sendFile(createTemplate(articleOne));
 });
 
 app.get('/article-two',function(req, res){
