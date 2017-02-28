@@ -17,7 +17,7 @@ button.onclick = function () {
             //take some action
             if(request.status === 200) {
             var counter =     request.responceText;
-             var span = document.getElementById('count');
+            var span = document.getElementById('count');
             span.innerHTML = counter.toString();
     
             }
@@ -29,8 +29,6 @@ button.onclick = function () {
     
     request.open('GET', 'http://sachin-thakur.imad.hasura-app.io/counter',true);
     request.send(null);
-    
-    
     
     
     
